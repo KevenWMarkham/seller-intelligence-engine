@@ -26,16 +26,19 @@ async def run_news_layer() -> int:
     return count
 
 
-async def run_ai_layer() -> None:
-    """Classify stored news items (requires Ollama)."""
+async def run_ai_layer() -> int:
+    """Classify stored news items and create SellerTasks (requires Ollama)."""
     from src.ai.ollama_client import is_healthy
     if not await is_healthy():
         print("    WARNING: Ollama is not running. Skipping AI classification.")
         print("    Start Ollama with: ollama serve")
-        return
+        return 0
 
-    from src.ai.classifier import classify_news
-    print("    Ollama is running — classification ready (Phase 4 wires this fully)")
+    from src.ai.pipeline import run_ai_pipeline
+    async with AsyncSessionLocal() as session:
+        count = await run_ai_pipeline(session)
+    print(f"    Created {count} new SellerTask(s)")
+    return count
 
 
 async def run_pipeline(layer: str | None = None) -> None:
@@ -51,7 +54,10 @@ async def run_pipeline(layer: str | None = None) -> None:
 
     if layer == "ai" or layer is None:
         print("--> Running AI classification...")
-        await run_ai_layer()
+        count = await run_ai_layer()
+        if layer == "ai":
+            print(f"==> Done. {count} tasks created.")
+            return
 
     print("==> Pipeline run complete.")
 
