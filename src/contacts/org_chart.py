@@ -71,12 +71,22 @@ def classify_role_type(title: str) -> str:
     Heuristic role type classification based on title seniority.
 
     Returns: decision_maker | influencer | champion
+
+    Acronyms (cto, cfo, etc.) are matched as whole words to avoid false
+    positives — e.g. "director" contains the substring "cto".
     """
     title_lower = title.lower()
-    decision_keywords = ["chief", "cto", "cfo", "cio", "cso", "coo", "ceo", "president", "evp", "svp"]
-    influencer_keywords = ["vp", "vice president", "director", "head of"]
-    if any(k in title_lower for k in decision_keywords):
+    words = set(title_lower.split())
+
+    # Acronyms must match as complete words
+    decision_exact = {"cto", "cfo", "cio", "cso", "coo", "ceo"}
+    decision_substrings = ["chief", "president", "evp", "svp"]
+
+    influencer_exact = {"vp"}
+    influencer_substrings = ["vice president", "director", "head of"]
+
+    if words & decision_exact or any(k in title_lower for k in decision_substrings):
         return "decision_maker"
-    if any(k in title_lower for k in influencer_keywords):
+    if words & influencer_exact or any(k in title_lower for k in influencer_substrings):
         return "influencer"
     return "champion"
