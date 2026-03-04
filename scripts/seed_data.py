@@ -33,6 +33,15 @@ COMPANIES = [
         "business_model": "B2B",
         "sales_motion": "wedge",
         "description": "Acme Corp is a mid-market industrial manufacturer specializing in precision components for the automotive and aerospace sectors. They are in early stages of digital transformation with limited cloud adoption.",
+        "tech_stack_json": json.dumps([
+            {"name": "azure", "category": "cloud", "confidence": 0.6, "source": "job_postings"},
+            {"name": "terraform", "category": "devops", "confidence": 0.8, "source": "website"},
+        ]),
+        "platform_adoption_json": json.dumps({
+            "microsoft": {"vendor": "microsoft", "depth": "light", "products_detected": ["Azure DevOps"], "evidence": ["azure mentions in job postings"], "confidence_scores": {}},
+            "google": {"vendor": "google", "depth": "none", "products_detected": [], "evidence": [], "confidence_scores": {}},
+            "aws": {"vendor": "aws", "depth": "none", "products_detected": [], "evidence": [], "confidence_scores": {}},
+        }),
     },
     {
         "name": "GlobalData Inc",
@@ -46,6 +55,16 @@ COMPANIES = [
         "business_model": "B2B SaaS",
         "sales_motion": "expand",
         "description": "GlobalData provides financial data analytics and risk management solutions to institutional investors. They are an existing Google Cloud customer using BigQuery for data warehousing and are now evaluating Vertex AI.",
+        "tech_stack_json": json.dumps([
+            {"name": "gcp", "category": "cloud", "confidence": 0.95, "source": "website"},
+            {"name": "python", "category": "language", "confidence": 0.9, "source": "job_postings"},
+            {"name": "kubernetes", "category": "devops", "confidence": 0.7, "source": "job_postings"},
+        ]),
+        "platform_adoption_json": json.dumps({
+            "google": {"vendor": "google", "depth": "moderate", "products_detected": ["BigQuery", "Google Kubernetes Engine"], "evidence": ["BigQuery mentioned on website", "GCP in job postings"], "confidence_scores": {}},
+            "aws": {"vendor": "aws", "depth": "none", "products_detected": [], "evidence": [], "confidence_scores": {}},
+            "microsoft": {"vendor": "microsoft", "depth": "none", "products_detected": [], "evidence": [], "confidence_scores": {}},
+        }),
     },
     {
         "name": "RetailNow",
@@ -59,6 +78,17 @@ COMPANIES = [
         "business_model": "Marketplace",
         "sales_motion": "displace",
         "description": "RetailNow operates an omnichannel retail platform for mid-market brands. They are currently deep in AWS but experiencing cost overruns and are evaluating GCP for their data and AI workloads.",
+        "tech_stack_json": json.dumps([
+            {"name": "aws", "category": "cloud", "confidence": 0.98, "source": "website"},
+            {"name": "python", "category": "language", "confidence": 0.9, "source": "job_postings"},
+            {"name": "react", "category": "frontend", "confidence": 0.85, "source": "website"},
+            {"name": "kubernetes", "category": "devops", "confidence": 0.8, "source": "job_postings"},
+        ]),
+        "platform_adoption_json": json.dumps({
+            "aws": {"vendor": "aws", "depth": "deep", "products_detected": ["EC2", "S3", "RDS", "Lambda"], "evidence": ["AWS mentioned extensively on website", "heavy AWS spend reported in earnings"], "confidence_scores": {}},
+            "google": {"vendor": "google", "depth": "evaluating", "products_detected": [], "evidence": ["evaluating GCP for data workloads"], "confidence_scores": {}},
+            "microsoft": {"vendor": "microsoft", "depth": "none", "products_detected": [], "evidence": [], "confidence_scores": {}},
+        }),
     },
 ]
 

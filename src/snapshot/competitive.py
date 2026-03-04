@@ -194,12 +194,28 @@ def _detect_competitors(
 # ── Battle card loading ───────────────────────────────────────────────────────
 
 
+# Map normalised keys back to file-name aliases (battle cards may use product names)
+_KEY_ALIASES: dict[str, list[str]] = {
+    "microsoft": ["microsoft", "azure"],
+    "google": ["google", "gcp"],
+    "aws": ["aws", "amazon"],
+}
+
+
 def _load_battle_card(vendor_key: str, competitor_key: str) -> dict[str, Any] | None:
-    """Load a battle card YAML for a vendor/competitor pair."""
-    candidates = [
-        _COMPETITIVE_DIR / f"{vendor_key}_vs_{competitor_key}.yaml",
-        _COMPETITIVE_DIR / f"{competitor_key}_vs_{vendor_key}.yaml",
-    ]
+    """Load a battle card YAML for a vendor/competitor pair.
+
+    Expands vendor/competitor keys to known aliases (e.g. "microsoft" → "azure")
+    so that files named google_vs_azure.yaml are found when competitor_key="microsoft".
+    """
+    vendor_aliases = _KEY_ALIASES.get(vendor_key, [vendor_key])
+    competitor_aliases = _KEY_ALIASES.get(competitor_key, [competitor_key])
+
+    candidates = []
+    for va in vendor_aliases:
+        for ca in competitor_aliases:
+            candidates.append(_COMPETITIVE_DIR / f"{va}_vs_{ca}.yaml")
+            candidates.append(_COMPETITIVE_DIR / f"{ca}_vs_{va}.yaml")
 
     for path in candidates:
         if path.exists():
