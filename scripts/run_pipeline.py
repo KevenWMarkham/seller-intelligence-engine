@@ -1,11 +1,12 @@
+"""Manual full pipeline trigger for testing and development.
+
+Usage:
+    python scripts/run_pipeline.py                # run full pipeline
+    python scripts/run_pipeline.py --layer news   # run news ingestion only
+    python scripts/run_pipeline.py --layer ai     # run AI classification only
 """
-Manual full pipeline trigger for testing and development.
 
-Runs: news ingestion → classification → brief generation → priority scoring → task creation.
-
-Usage: python scripts/run_pipeline.py
-"""
-
+import argparse
 import asyncio
 import sys
 from pathlib import Path
@@ -13,25 +14,20 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.db.database import AsyncSessionLocal, init_db
-from src.ingestion.news import collect_rss_feeds
 
 
-async def run_pipeline():
-    print("==> NEXUS Pipeline — Manual Run")
+async def run_news_layer() -> int:
+    """Collect and store news items. Returns count of new items."""
+    from src.ingestion.news import NewsCollector
+    async with AsyncSessionLocal() as session:
+        collector = NewsCollector()
+        count = await collector.collect(session)
+    print(f"    Stored {count} new news items")
+    return count
 
-    await init_db()
 
-    # Step 1: Collect news
-    print("--> Step 1: Collecting news from RSS feeds...")
-    items = await collect_rss_feeds()
-    print(f"    Collected {len(items)} raw news items")
-
-    if not items:
-        print("    No news items collected. Check config/ingestion.yaml and network.")
-        return
-
-    # Step 2: Classify (requires Ollama running)
-    print("--> Step 2: Classifying news items (requires Ollama)...")
+async def run_ai_layer() -> None:
+    """Classify stored news items (requires Ollama)."""
     from src.ai.ollama_client import is_healthy
     if not await is_healthy():
         print("    WARNING: Ollama is not running. Skipping AI classification.")
@@ -39,23 +35,29 @@ async def run_pipeline():
         return
 
     from src.ai.classifier import classify_news
-    classified = []
-    for item in items[:5]:  # Limit to 5 for manual runs
-        try:
-            classification = await classify_news(
-                headline=item.headline,
-                body=item.body or "",
-                platform_vendor="google",
-                watched_companies=[],
-            )
-            classified.append((item, classification))
-            print(f"    Classified: {item.headline[:60]}... → relevance={classification.relevance_score:.2f} urgency={classification.urgency}")
-        except Exception as e:
-            print(f"    ERROR classifying item: {e}")
+    print("    Ollama is running — classification ready (Phase 4 wires this fully)")
 
-    print(f"\n==> Pipeline complete. Classified {len(classified)}/{len(items[:5])} items.")
-    print("    Phase 4-6 implementation will complete the full pipeline.")
+
+async def run_pipeline(layer: str | None = None) -> None:
+    print("==> NEXUS Pipeline — Manual Run")
+    await init_db()
+
+    if layer == "news" or layer is None:
+        print("--> Collecting news...")
+        count = await run_news_layer()
+        if layer == "news":
+            print(f"==> Done. {count} new items stored.")
+            return
+
+    if layer == "ai" or layer is None:
+        print("--> Running AI classification...")
+        await run_ai_layer()
+
+    print("==> Pipeline run complete.")
 
 
 if __name__ == "__main__":
-    asyncio.run(run_pipeline())
+    parser = argparse.ArgumentParser(description="NEXUS manual pipeline trigger")
+    parser.add_argument("--layer", choices=["news", "ai"], help="Run a specific layer only")
+    args = parser.parse_args()
+    asyncio.run(run_pipeline(layer=args.layer))
