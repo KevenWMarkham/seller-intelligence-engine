@@ -1,0 +1,185 @@
+platform_vendor: microsoft
+isvs:
+  - name: "SAP on Azure"
+    description: "Certified SAP S/4HANA and SAP BTP deployment on Microsoft Azure with optimized infrastructure for ERP, supply chain, and finance workloads."
+    industries: ["Manufacturing", "Retail & CPG", "Energy & Utilities", "Financial Services"]
+    capabilities: ["Application Modernization", "Infrastructure & Operations", "Automation & Integration"]
+    business_outcomes:
+      - "Accelerate SAP S/4HANA migration 40% faster with Azure-certified architectures"
+      - "Reduce SAP total cost of ownership 30-45% vs on-premise"
+      - "Enable real-time financial close and supply chain visibility"
+    processes_improved:
+      - "ERP modernization and S/4HANA migration"
+      - "Supply chain digitization and planning"
+      - "Financial reporting and period-end close"
+    kpis_impacted:
+      - "ERP operational cost"
+      - "Financial close cycle time"
+      - "Supply chain visibility score"
+    primary_buyer: "Chief Financial Officer"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "azure"
+
+  - name: "ServiceNow"
+    description: "Cloud platform for digital workflow automation across IT, employee, and customer service with AI-powered process intelligence."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Government & Public Sector", "Telecommunications"]
+    capabilities: ["Automation & Integration", "Customer Experience", "Infrastructure & Operations"]
+    business_outcomes:
+      - "Reduce IT service request resolution time by 50% with AI-powered routing"
+      - "Automate 60% of employee onboarding workflows end-to-end"
+      - "Achieve 40% improvement in customer service satisfaction scores"
+    processes_improved:
+      - "IT service management (ITSM) and ITOM"
+      - "Employee service delivery and HR workflows"
+      - "Customer service management"
+    kpis_impacted:
+      - "Mean time to resolve IT incidents"
+      - "Employee experience score"
+      - "Customer service SLA compliance"
+    primary_buyer: "Chief Information Officer"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "azure"
+
+  - name: "Databricks on Azure"
+    description: "Unified data and AI platform optimized for Azure with native Azure AD integration, Azure Data Lake Storage, and Azure DevOps for enterprise MLOps."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Retail & CPG", "Manufacturing"]
+    capabilities: ["AI & Machine Learning", "Data & Analytics"]
+    business_outcomes:
+      - "Reduce ML model development cycles from months to weeks"
+      - "Unify data engineering and data science teams on a single Azure-native platform"
+      - "Cut analytics infrastructure costs 40% with serverless compute auto-scaling"
+    processes_improved:
+      - "Machine learning model development and deployment"
+      - "Real-time and batch analytics pipelines"
+      - "Data lakehouse architecture migration"
+    kpis_impacted:
+      - "ML model time-to-production"
+      - "Data engineering cost per TB processed"
+      - "Analytics infrastructure utilization"
+    primary_buyer: "Chief Data Officer"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "usage_based"
+    marketplace: "azure"
+
+  - name: "Palo Alto Networks"
+    description: "Cloud-native security platform protecting Azure workloads with next-generation firewall, cloud security posture management, and Zero Trust network access."
+    industries: ["Financial Services", "Government & Public Sector", "Healthcare & Life Sciences", "Energy & Utilities"]
+    capabilities: ["Security & Compliance"]
+    business_outcomes:
+      - "Achieve Zero Trust network architecture across hybrid Azure environments"
+      - "Block 99.9% of advanced persistent threats with ML-powered detection"
+      - "Reduce security tooling sprawl by consolidating 5+ point tools"
+    processes_improved:
+      - "Network security and micro-segmentation"
+      - "Cloud workload protection and posture management"
+      - "Zero Trust access management"
+    kpis_impacted:
+      - "Security incident rate"
+      - "Time to detect lateral movement"
+      - "Security tool consolidation ratio"
+    primary_buyer: "CISO"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "azure"
+
+  - name: "Informatica on Azure"
+    description: "Cloud data management platform with native Azure integration for data integration, master data management, and enterprise data governance on Azure Data Factory and Synapse."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Manufacturing", "Retail & CPG"]
+    capabilities: ["Data & Analytics", "Application Modernization", "Automation & Integration"]
+    business_outcomes:
+      - "Migrate on-premise data warehouses to Azure Synapse 50% faster"
+      - "Reduce data quality incidents 75% with AI-powered data observability"
+      - "Enable trusted data products from raw data in hours vs days"
+    processes_improved:
+      - "Legacy data warehouse modernization to Azure"
+      - "Master data management and golden record creation"
+      - "Data governance and cataloging"
+    kpis_impacted:
+      - "Data migration velocity"
+      - "Data quality defect rate"
+      - "Time to certified data product"
+    primary_buyer: "Chief Data Officer"
+    co_sell_status: "ip_co_sell"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "azure"
+
+  - name: "Commvault"
+    description: "Enterprise data backup, recovery, and cyber resilience platform with native Azure integration for cloud-first data protection and ransomware recovery."
+    industries: ["Financial Services", "Government & Public Sector", "Healthcare & Life Sciences", "Manufacturing"]
+    capabilities: ["Infrastructure & Operations", "Security & Compliance"]
+    business_outcomes:
+      - "Achieve recovery time objectives (RTO) of minutes vs hours with Azure-native backup"
+      - "Reduce backup storage costs 60% with intelligent deduplication and tiering"
+      - "Recover from ransomware attacks in hours with air-gapped immutable copies"
+    processes_improved:
+      - "Enterprise backup and disaster recovery"
+      - "Cloud archive and long-term retention"
+      - "Ransomware detection and recovery workflows"
+    kpis_impacted:
+      - "Recovery time objective (RTO)"
+      - "Recovery point objective (RPO)"
+      - "Backup storage cost per TB"
+    primary_buyer: "VP Infrastructure"
+    co_sell_status: "listing_only"
+    integration_depth: "api_integration"
+    cert_level: "standard"
+    pricing_model: "subscription"
+    marketplace: "azure"
+
+  - name: "Elastic on Azure"
+    description: "Search-powered observability and SIEM platform with native Azure Monitor and Microsoft Sentinel integration for unified security and operations."
+    industries: ["Financial Services", "Retail & CPG", "Government & Public Sector", "Telecommunications"]
+    capabilities: ["Security & Compliance", "Infrastructure & Operations", "Data & Analytics"]
+    business_outcomes:
+      - "Unify Azure security signals with SIEM analytics to detect threats 5x faster"
+      - "Reduce log management costs 50% with intelligent retention tiering"
+      - "Enable full-stack observability across Azure microservices in one platform"
+    processes_improved:
+      - "Security information and event management (SIEM)"
+      - "Azure infrastructure and application monitoring"
+      - "Log analytics and compliance reporting"
+    kpis_impacted:
+      - "Threat detection time"
+      - "Log ingestion cost per GB"
+      - "Observability coverage"
+    primary_buyer: "CISO"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "standard"
+    pricing_model: "usage_based"
+    marketplace: "azure"
+
+  - name: "Snowflake on Azure"
+    description: "Cloud data platform natively integrated with Azure Active Directory and Azure Data Lake for enterprise data warehousing, sharing, and AI workloads."
+    industries: ["Financial Services", "Retail & CPG", "Healthcare & Life Sciences", "Media & Entertainment"]
+    capabilities: ["Data & Analytics", "AI & Machine Learning"]
+    business_outcomes:
+      - "Enable secure data collaboration across business units and external partners"
+      - "Reduce data warehouse query costs 40% with auto-suspend compute clusters"
+      - "Power real-time financial risk analytics on petabyte-scale transaction data"
+    processes_improved:
+      - "Enterprise analytics and financial reporting"
+      - "Regulatory data sharing and collaboration"
+      - "AI/ML training data management"
+    kpis_impacted:
+      - "Data sharing time-to-value"
+      - "Analytics query cost"
+      - "Data warehouse SLA compliance"
+    primary_buyer: "Chief Data Officer"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "usage_based"
+    marketplace: "azure"

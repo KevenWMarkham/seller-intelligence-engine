@@ -222,9 +222,77 @@ async def get_company_snapshot(
 
 
 @router.get("/{company_id}/isvs")
-async def get_company_isvs(company_id: int, session: SessionDep):
-    """Get ISV recommendations matched to this company (Sprint 9)."""
+async def get_company_isvs(
+    company_id: int,
+    session: SessionDep,
+    platform: PlatformContext = Depends(get_platform_context),
+):
+    """Get ISV recommendations matched to this company.
+
+    On first call, seeds the ISV catalog from config/isvs/{vendor}.yaml
+    if no ISVs exist in the DB yet. Then runs the multi-factor matcher
+    and returns ranked ISVMatch results with business outcomes.
+    """
+    import json as _json
+
+    from src.isv.matcher import match_isvs_to_company
+    from src.isv.scraper import seed_isv_catalog
+    from src.models.isv import ISVSolution
+    from sqlalchemy import select, func
+
     company = await session.get(Company, company_id)
     if not company:
         raise HTTPException(status_code=404, detail="Company not found")
-    return {"company_id": company_id, "isvs": []}
+
+    # Auto-seed catalog if DB has no ISVs for this vendor
+    count_result = await session.execute(
+        select(func.count()).select_from(ISVSolution).where(
+            ISVSolution.platform_vendor == platform.vendor
+        )
+    )
+    isv_count = count_result.scalar_one()
+    if isv_count == 0:
+        logger.info(
+            "No ISVs in DB for vendor=%s — seeding catalog", platform.vendor
+        )
+        await seed_isv_catalog(session, platform.vendor)
+        await session.commit()
+
+    # Extract company priorities for capability matching
+    company_priorities: list[str] = []
+    if company.priorities_json:
+        try:
+            parsed = _json.loads(company.priorities_json)
+            if isinstance(parsed, list):
+                company_priorities = [
+                    p.get("priority", "") if isinstance(p, dict) else str(p)
+                    for p in parsed
+                ]
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+    tech_stack: list[str] = []
+    if company.tech_stack_json:
+        try:
+            ts = _json.loads(company.tech_stack_json)
+            tech_stack = [t.get("name", "") for t in ts if isinstance(t, dict)]
+        except (json.JSONDecodeError, TypeError):
+            pass
+
+    matches = await match_isvs_to_company(
+        company_name=company.name,
+        industry=company.industry,
+        company_priorities=company_priorities,
+        tech_stack=tech_stack,
+        platform_vendor=platform.vendor,
+        sales_motion=company.sales_motion or "new",
+        session=session,
+        top_n=5,
+    )
+
+    return {
+        "company_id": company_id,
+        "company_name": company.name,
+        "vendor": platform.vendor,
+        "isvs": [m.model_dump() for m in matches],
+    }

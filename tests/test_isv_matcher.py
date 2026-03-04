@@ -1,13 +1,23 @@
 """Tests for Layer 1.5 — ISV Matcher."""
 
+from unittest.mock import AsyncMock, MagicMock
+
 import pytest
-from src.isv.matcher import match_isvs_to_company, ISVMatch
-from src.contacts.linker import link_contacts_to_news, SIGNAL_FA_ROUTING
+
+from src.contacts.linker import SIGNAL_FA_ROUTING, link_contacts_to_news
 from src.contacts.resolver import ResolvedContact
+from src.isv.matcher import ISVMatch, match_isvs_to_company
 
 
 @pytest.mark.asyncio
 async def test_match_isvs_returns_list():
+    """match_isvs_to_company returns an empty list when DB has no ISVs."""
+    mock_session = AsyncMock()
+    # Simulate no ISVs in DB
+    mock_result = MagicMock()
+    mock_result.scalars.return_value.all.return_value = []
+    mock_session.execute = AsyncMock(return_value=mock_result)
+
     results = await match_isvs_to_company(
         company_name="Acme Corp",
         industry="Manufacturing",
@@ -15,6 +25,7 @@ async def test_match_isvs_returns_list():
         tech_stack=["AWS", "SAP"],
         platform_vendor="google",
         sales_motion="wedge",
+        session=mock_session,
     )
     assert isinstance(results, list)
 

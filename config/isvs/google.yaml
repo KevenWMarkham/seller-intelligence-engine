@@ -1,0 +1,231 @@
+platform_vendor: google
+isvs:
+  - name: "Databricks"
+    description: "Unified data and AI platform combining data engineering, collaborative data science, machine learning, and analytics on an open lakehouse architecture."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Retail & CPG", "Manufacturing", "Media & Entertainment"]
+    capabilities: ["AI & Machine Learning", "Data & Analytics"]
+    business_outcomes:
+      - "Reduce data engineering costs by 40-60% vs traditional on-prem approaches"
+      - "Accelerate ML model deployment from weeks to days"
+      - "Unify batch and streaming data workloads on a single platform"
+    processes_improved:
+      - "Data pipeline development and management"
+      - "ML model training, evaluation, and deployment"
+      - "Real-time analytics and feature engineering"
+    kpis_impacted:
+      - "Time to insight"
+      - "ML model refresh rate"
+      - "Data engineering cost per TB"
+    primary_buyer: "Chief Data Officer"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "usage_based"
+    marketplace: "gcp"
+
+  - name: "Fivetran"
+    description: "Automated data movement platform that extracts data from 500+ sources and delivers it to cloud data warehouses in ready-to-query schemas."
+    industries: ["Financial Services", "Retail & CPG", "Media & Entertainment", "Telecommunications"]
+    capabilities: ["Data & Analytics", "Automation & Integration"]
+    business_outcomes:
+      - "Eliminate 80% of custom ETL maintenance with automated pipeline management"
+      - "Achieve sub-hourly data freshness from all critical business systems"
+      - "Reduce time-to-analytics for new data sources from months to hours"
+    processes_improved:
+      - "Data ingestion and pipeline management"
+      - "ERP and CRM data synchronization"
+      - "Business reporting and analytics workflows"
+    kpis_impacted:
+      - "Data pipeline uptime"
+      - "Time to onboard new data source"
+      - "ETL engineering hours"
+    primary_buyer: "VP Data Engineering"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "standard"
+    pricing_model: "usage_based"
+    marketplace: "gcp"
+
+  - name: "Elastic"
+    description: "Search-powered solutions for enterprise search, observability, and security analytics built on the Elasticsearch engine."
+    industries: ["Financial Services", "Retail & CPG", "Government & Public Sector", "Telecommunications"]
+    capabilities: ["Security & Compliance", "Data & Analytics", "Infrastructure & Operations"]
+    business_outcomes:
+      - "Detect and respond to security threats 3x faster with unified SIEM and XDR"
+      - "Reduce mean time to resolve incidents by 60% with unified observability"
+      - "Improve customer search relevance to drive 20%+ conversion lift"
+    processes_improved:
+      - "Security incident detection and response"
+      - "Application performance monitoring"
+      - "Enterprise and e-commerce search"
+    kpis_impacted:
+      - "Mean time to detect (MTTD)"
+      - "Mean time to resolve (MTTR)"
+      - "Search click-through rate"
+    primary_buyer: "CISO"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "usage_based"
+    marketplace: "gcp"
+
+  - name: "Palo Alto Networks Prisma Cloud"
+    description: "Cloud-native application protection platform (CNAPP) securing the full cloud-native stack — infrastructure, workloads, applications, and data across multicloud environments."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Government & Public Sector", "Energy & Utilities"]
+    capabilities: ["Security & Compliance"]
+    business_outcomes:
+      - "Reduce cloud security incidents by 70% with unified posture management"
+      - "Achieve continuous compliance across PCI-DSS, HIPAA, and SOC2 frameworks"
+      - "Cut security team workload 40% by eliminating siloed point tools"
+    processes_improved:
+      - "Cloud infrastructure security posture management (CSPM)"
+      - "Container and Kubernetes security"
+      - "DevSecOps pipeline integration"
+    kpis_impacted:
+      - "Cloud misconfiguration rate"
+      - "Time to remediate critical vulnerabilities"
+      - "Compliance audit pass rate"
+    primary_buyer: "CISO"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "gcp"
+
+  - name: "Informatica"
+    description: "AI-powered cloud data management platform for data integration, quality, governance, and master data management at enterprise scale."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Retail & CPG", "Manufacturing"]
+    capabilities: ["Data & Analytics", "Application Modernization", "Automation & Integration"]
+    business_outcomes:
+      - "Reduce data quality issues by 80% with AI-powered automated cleansing"
+      - "Accelerate cloud migration timelines by 50% with intelligent data mapping"
+      - "Achieve single source of truth across all enterprise systems"
+    processes_improved:
+      - "Master data management and data quality"
+      - "Cloud data warehouse migration"
+      - "Enterprise data governance and cataloging"
+    kpis_impacted:
+      - "Data quality score"
+      - "Cloud migration velocity"
+      - "Time to certified data"
+    primary_buyer: "Chief Data Officer"
+    co_sell_status: "ip_co_sell"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "gcp"
+
+  - name: "Looker"
+    description: "Business intelligence and data analytics platform enabling embedded analytics and self-service BI powered by a reusable semantic model (LookML)."
+    industries: ["Financial Services", "Retail & CPG", "Healthcare & Life Sciences", "Media & Entertainment"]
+    capabilities: ["Data & Analytics", "Customer Experience"]
+    business_outcomes:
+      - "Enable self-service analytics for 5x more business users without IT involvement"
+      - "Reduce dashboard-to-decision cycle from days to minutes"
+      - "Embed analytics directly into customer-facing products to drive retention"
+    processes_improved:
+      - "Executive and operational reporting"
+      - "Customer-facing analytics and embedded BI"
+      - "Ad-hoc data exploration and analysis"
+    kpis_impacted:
+      - "Dashboard adoption rate"
+      - "Report request backlog"
+      - "Data-driven decision velocity"
+    primary_buyer: "VP Analytics"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "gcp"
+
+  - name: "Collibra"
+    description: "Data intelligence platform providing data cataloging, data lineage, data governance, and business glossary capabilities for regulated industries."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Government & Public Sector", "Energy & Utilities"]
+    capabilities: ["Data & Analytics", "Security & Compliance"]
+    business_outcomes:
+      - "Reduce regulatory reporting preparation time by 60% with automated data lineage"
+      - "Pass data audits 3x faster with certified, discoverable data assets"
+      - "Enable self-service access to trusted data for 10x more analysts"
+    processes_improved:
+      - "Data governance and stewardship workflows"
+      - "Regulatory compliance and audit preparation"
+      - "Data catalog and discovery"
+    kpis_impacted:
+      - "Data asset certification rate"
+      - "Regulatory audit preparation time"
+      - "Data consumer self-service rate"
+    primary_buyer: "Chief Data Officer"
+    co_sell_status: "listing_only"
+    integration_depth: "listing"
+    cert_level: "standard"
+    pricing_model: "subscription"
+    marketplace: "gcp"
+
+  - name: "Redis Enterprise"
+    description: "In-memory data platform delivering ultra-low latency caching, session management, real-time analytics, and AI-powered applications at scale."
+    industries: ["Financial Services", "Retail & CPG", "Telecommunications", "Gaming & Media"]
+    capabilities: ["Infrastructure & Operations", "Customer Experience", "AI & Machine Learning"]
+    business_outcomes:
+      - "Achieve sub-millisecond response times for customer-facing applications"
+      - "Reduce database costs 60% by offloading 90% of read queries from primary DB"
+      - "Power real-time personalization at 1M+ requests per second"
+    processes_improved:
+      - "Application caching and session management"
+      - "Real-time leaderboards and recommendation engines"
+      - "Fraud detection and risk scoring"
+    kpis_impacted:
+      - "API response latency (p99)"
+      - "Database read throughput"
+      - "Customer session conversion rate"
+    primary_buyer: "VP Engineering"
+    co_sell_status: "ip_co_sell"
+    integration_depth: "transactable"
+    cert_level: "standard"
+    pricing_model: "usage_based"
+    marketplace: "gcp"
+
+  - name: "Workato"
+    description: "Enterprise automation platform combining iPaaS, RPA, and API management to automate complex business processes across cloud and on-premise systems."
+    industries: ["Financial Services", "Retail & CPG", "Healthcare & Life Sciences", "Manufacturing"]
+    capabilities: ["Automation & Integration", "Collaboration & Productivity"]
+    business_outcomes:
+      - "Automate 80% of manual IT and business workflows without custom code"
+      - "Reduce process cycle times by 70% through end-to-end automation"
+      - "Integrate 1000+ cloud apps with pre-built connectors in days vs months"
+    processes_improved:
+      - "HR onboarding and offboarding automation"
+      - "Order-to-cash and quote-to-cash processes"
+      - "IT service management and incident workflows"
+    kpis_impacted:
+      - "Process automation rate"
+      - "Manual process hours eliminated"
+      - "Integration delivery time"
+    primary_buyer: "Chief Operating Officer"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "api_integration"
+    cert_level: "standard"
+    pricing_model: "subscription"
+    marketplace: "gcp"
+
+  - name: "dbt Labs"
+    description: "Data transformation platform enabling analytics engineers to define, test, and deploy data models as SQL-based version-controlled code."
+    industries: ["Financial Services", "Retail & CPG", "Media & Entertainment", "Healthcare & Life Sciences"]
+    capabilities: ["Data & Analytics", "AI & Machine Learning"]
+    business_outcomes:
+      - "Reduce time to produce analytics-ready data from days to hours"
+      - "Increase data team velocity 3x with modular, reusable SQL transforms"
+      - "Eliminate data inconsistencies with automated testing and documentation"
+    processes_improved:
+      - "Data transformation and modeling pipeline"
+      - "Analytics engineering and data product development"
+      - "Data warehouse cost optimization"
+    kpis_impacted:
+      - "Data transformation cycle time"
+      - "Analytics data freshness SLA"
+      - "Data model test coverage"
+    primary_buyer: "VP Data Engineering"
+    co_sell_status: "listing_only"
+    integration_depth: "api_integration"
+    cert_level: "standard"
+    pricing_model: "subscription"
+    marketplace: "gcp"

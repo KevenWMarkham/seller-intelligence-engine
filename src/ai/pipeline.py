@@ -16,6 +16,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from src.ai import brief_generator, classifier, scorer
 from src.contacts.linker import link_contacts_to_news
 from src.contacts.resolver import resolve_contacts
+from src.isv.matcher import match_isvs_to_company
 from src.models.company import Company
 from src.models.contact import Contact
 from src.models.news import NewsItem
@@ -173,6 +174,22 @@ async def run_ai_pipeline(session: AsyncSession) -> int:
                 priorities: list[str] = _extract_priorities(company)
                 platform_adoption = _adoption_depth(company.sales_motion)
 
+                # Match top ISVs for this company (best-effort, never blocks)
+                isv_matches = []
+                try:
+                    isv_matches = await match_isvs_to_company(
+                        company_name=company.name,
+                        industry=company.industry,
+                        company_priorities=priorities,
+                        tech_stack=[],
+                        platform_vendor=vendor,
+                        sales_motion=company.sales_motion or "new",
+                        session=session,
+                        top_n=2,
+                    )
+                except Exception as exc:
+                    logger.debug("ISV matching skipped for %s: %s", company.name, exc)
+
                 # Generate brief
                 brief = await brief_generator.generate_brief(
                     company_name=company.name,
@@ -185,6 +202,7 @@ async def run_ai_pipeline(session: AsyncSession) -> int:
                     sales_motion=company.sales_motion or "new",
                     company_priorities=priorities,
                     platform_products=platform_products,
+                    isv_matches=isv_matches,
                 )
 
                 # Score the task

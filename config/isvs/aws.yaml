@@ -1,0 +1,185 @@
+platform_vendor: aws
+isvs:
+  - name: "Snowflake"
+    description: "Cloud data platform providing data warehousing, data lake, data sharing, and data applications on a single platform with near-unlimited scalability."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Retail & CPG", "Media & Entertainment"]
+    capabilities: ["Data & Analytics", "AI & Machine Learning"]
+    business_outcomes:
+      - "Eliminate data silos and enable secure data sharing across business units"
+      - "Scale compute and storage independently to reduce cloud data costs 30-50%"
+      - "Power real-time analytics on petabyte-scale data without performance degradation"
+    processes_improved:
+      - "Enterprise data warehousing and analytics"
+      - "Data marketplace and secure external sharing"
+      - "ML feature store and model training data management"
+    kpis_impacted:
+      - "Query performance (P95 latency)"
+      - "Data warehouse total cost of ownership"
+      - "Cross-team data sharing velocity"
+    primary_buyer: "Chief Data Officer"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "usage_based"
+    marketplace: "aws"
+
+  - name: "Datadog"
+    description: "Cloud monitoring and security platform providing full-stack observability — infrastructure metrics, APM, logs, synthetics, and security in one unified platform."
+    industries: ["Financial Services", "Retail & CPG", "Telecommunications", "Media & Entertainment"]
+    capabilities: ["Infrastructure & Operations", "Security & Compliance", "Application Modernization"]
+    business_outcomes:
+      - "Reduce MTTR by 60% with correlated metrics, logs, and traces in a single pane"
+      - "Detect performance regressions within minutes of deployment"
+      - "Reduce cloud infrastructure waste 20-30% with rightsizing recommendations"
+    processes_improved:
+      - "Application performance monitoring and troubleshooting"
+      - "Cloud infrastructure cost optimization"
+      - "DevOps and SRE workflows"
+    kpis_impacted:
+      - "Mean time to resolve (MTTR)"
+      - "Alert noise-to-signal ratio"
+      - "Cloud spend efficiency"
+    primary_buyer: "VP Engineering"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "usage_based"
+    marketplace: "aws"
+
+  - name: "Confluent"
+    description: "Data streaming platform built on Apache Kafka enabling real-time data pipelines, event-driven applications, and stream processing at enterprise scale."
+    industries: ["Financial Services", "Retail & CPG", "Telecommunications", "Manufacturing"]
+    capabilities: ["Data & Analytics", "Automation & Integration", "Application Modernization"]
+    business_outcomes:
+      - "Enable real-time fraud detection with sub-100ms event processing latency"
+      - "Decouple microservices to accelerate feature delivery by 40%"
+      - "Consolidate 10+ point-to-point integrations into a single event mesh"
+    processes_improved:
+      - "Real-time data streaming and event processing"
+      - "Microservices event-driven architecture"
+      - "Change data capture from legacy databases"
+    kpis_impacted:
+      - "Data pipeline latency"
+      - "Integration maintenance overhead"
+      - "Feature deployment frequency"
+    primary_buyer: "Chief Architect"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "usage_based"
+    marketplace: "aws"
+
+  - name: "CrowdStrike Falcon"
+    description: "Cloud-native endpoint protection, threat intelligence, and identity protection platform stopping breaches with AI-powered detection and automated response."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Government & Public Sector", "Energy & Utilities"]
+    capabilities: ["Security & Compliance"]
+    business_outcomes:
+      - "Prevent 99.7% of malware with AI-powered behavioral detection"
+      - "Reduce endpoint incident response time from hours to minutes"
+      - "Achieve NIST, SOC2, and ISO 27001 compliance with automated evidence collection"
+    processes_improved:
+      - "Endpoint detection and response (EDR)"
+      - "Threat hunting and intelligence"
+      - "Identity threat protection and MFA enforcement"
+    kpis_impacted:
+      - "Endpoint breach rate"
+      - "Mean time to contain (MTTC)"
+      - "Compliance coverage score"
+    primary_buyer: "CISO"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "aws"
+
+  - name: "MongoDB Atlas"
+    description: "Fully managed cloud database service for building modern applications with a flexible document model, global distribution, and built-in AI capabilities."
+    industries: ["Financial Services", "Healthcare & Life Sciences", "Retail & CPG", "Media & Entertainment"]
+    capabilities: ["Application Modernization", "Infrastructure & Operations", "AI & Machine Learning"]
+    business_outcomes:
+      - "Accelerate application development 3x with schema flexibility vs relational DBs"
+      - "Eliminate database scaling bottlenecks with automatic sharding"
+      - "Reduce operational database costs 40% vs self-managed MongoDB"
+    processes_improved:
+      - "Application data layer modernization"
+      - "Real-time operational analytics (HTAP)"
+      - "Search, vector search, and AI-powered application features"
+    kpis_impacted:
+      - "Application development velocity"
+      - "Database uptime SLA"
+      - "Storage and compute cost per request"
+    primary_buyer: "VP Engineering"
+    co_sell_status: "ip_co_sell"
+    integration_depth: "transactable"
+    cert_level: "standard"
+    pricing_model: "usage_based"
+    marketplace: "aws"
+
+  - name: "Splunk Enterprise Security"
+    description: "SIEM and security operations platform providing threat detection, investigation, response, and compliance management with real-time analytics at scale."
+    industries: ["Financial Services", "Government & Public Sector", "Healthcare & Life Sciences", "Energy & Utilities"]
+    capabilities: ["Security & Compliance", "Data & Analytics"]
+    business_outcomes:
+      - "Detect advanced threats 4x faster with behavioral analytics and ML"
+      - "Reduce SOC analyst alert fatigue by 70% with automated triage"
+      - "Achieve GDPR, HIPAA, and PCI compliance with pre-built content packs"
+    processes_improved:
+      - "Security operations center (SOC) workflows"
+      - "Threat detection, investigation, and response (TDIR)"
+      - "Compliance reporting and audit management"
+    kpis_impacted:
+      - "Mean time to detect (MTTD)"
+      - "SOC analyst productivity"
+      - "Compliance audit preparation cost"
+    primary_buyer: "CISO"
+    co_sell_status: "co_sell_ready"
+    integration_depth: "transactable"
+    cert_level: "advanced"
+    pricing_model: "subscription"
+    marketplace: "aws"
+
+  - name: "HashiCorp Terraform"
+    description: "Infrastructure as code platform enabling teams to provision, manage, and version cloud infrastructure across all major cloud providers."
+    industries: ["Financial Services", "Telecommunications", "Retail & CPG", "Manufacturing"]
+    capabilities: ["Infrastructure & Operations", "Application Modernization", "Automation & Integration"]
+    business_outcomes:
+      - "Reduce cloud provisioning time from weeks to minutes with IaC automation"
+      - "Eliminate configuration drift and reduce infrastructure incidents by 50%"
+      - "Enable multi-cloud and hybrid cloud management from a single control plane"
+    processes_improved:
+      - "Cloud infrastructure provisioning and lifecycle management"
+      - "GitOps and DevOps pipeline automation"
+      - "Multi-cloud cost governance and policy enforcement"
+    kpis_impacted:
+      - "Infrastructure provisioning lead time"
+      - "Configuration drift incidents"
+      - "Cloud cost governance coverage"
+    primary_buyer: "VP Infrastructure"
+    co_sell_status: "listing_only"
+    integration_depth: "api_integration"
+    cert_level: "standard"
+    pricing_model: "subscription"
+    marketplace: "aws"
+
+  - name: "Dynatrace"
+    description: "AI-powered observability and security platform providing automatic discovery, end-to-end tracing, and intelligent analytics for cloud-native environments."
+    industries: ["Financial Services", "Retail & CPG", "Telecommunications", "Healthcare & Life Sciences"]
+    capabilities: ["Infrastructure & Operations", "Application Modernization", "Security & Compliance"]
+    business_outcomes:
+      - "Reduce MTTR from hours to minutes with AI-driven root cause analysis"
+      - "Improve digital experience scores 25% with real user monitoring insights"
+      - "Eliminate 80% of manual monitoring configuration with automatic discovery"
+    processes_improved:
+      - "Application performance management"
+      - "Cloud infrastructure optimization"
+      - "Digital experience monitoring"
+    kpis_impacted:
+      - "Application MTTR"
+      - "Digital experience score (Apdex)"
+      - "Monitoring coverage automation"
+    primary_buyer: "VP Engineering"
+    co_sell_status: "ip_co_sell"
+    integration_depth: "transactable"
+    cert_level: "standard"
+    pricing_model: "usage_based"
+    marketplace: "aws"

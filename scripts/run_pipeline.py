@@ -42,6 +42,24 @@ async def run_ai_layer() -> int:
     return count
 
 
+async def run_isv_layer() -> int:
+    """Seed ISV catalog from config/isvs/ into the DB for all configured vendors."""
+    from src.api.config import get_platform_context
+    from src.isv.scraper import seed_isv_catalog
+
+    platform = await get_platform_context()
+    total = 0
+
+    async with AsyncSessionLocal() as session:
+        # Seed for active vendor
+        count = await seed_isv_catalog(session, platform.vendor)
+        await session.commit()
+        total += count
+        print(f"    Seeded {count} ISVs for vendor={platform.vendor}")
+
+    return total
+
+
 async def run_snapshot_layer() -> int:
     """Run full snapshot pipeline for all companies (requires Ollama for motion + priorities)."""
     from sqlalchemy import select
@@ -183,6 +201,13 @@ async def run_pipeline(layer: str | None = None) -> None:
             print(f"==> Done. {count} companies updated.")
             return
 
+    if layer == "isvs" or layer is None:
+        print("--> Seeding ISV catalog...")
+        count = await run_isv_layer()
+        if layer == "isvs":
+            print(f"==> Done. {count} new ISVs seeded.")
+            return
+
     print("==> Pipeline run complete.")
 
 
@@ -190,7 +215,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="NEXUS manual pipeline trigger")
     parser.add_argument(
         "--layer",
-        choices=["news", "ai", "snapshot"],
+        choices=["news", "ai", "snapshot", "isvs"],
         help="Run a specific layer only",
     )
     args = parser.parse_args()
