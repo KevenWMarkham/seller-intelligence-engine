@@ -96,12 +96,15 @@ CONTACTS = [
     # Acme Corp
     {"company_domain": "acme.com", "name": "Michael Torres", "title": "VP Engineering", "functional_area": "Engineering", "role_type": "decision_maker", "platform_relevance_score": 0.9},
     {"company_domain": "acme.com", "name": "Sandra Lee", "title": "Director of IT", "functional_area": "IT Operations", "role_type": "influencer", "platform_relevance_score": 0.7},
+    {"company_domain": "acme.com", "name": "Carlos Mendes", "title": "Senior Cloud Architect", "functional_area": "Engineering", "role_type": "champion", "platform_relevance_score": 0.75},
     # GlobalData
     {"company_domain": "globaldata.io", "name": "James Chen", "title": "Chief Data Officer", "functional_area": "Data & Analytics", "role_type": "decision_maker", "platform_relevance_score": 0.95},
     {"company_domain": "globaldata.io", "name": "Priya Nair", "title": "VP Data Engineering", "functional_area": "Engineering", "role_type": "influencer", "platform_relevance_score": 0.85},
+    {"company_domain": "globaldata.io", "name": "Oliver Grant", "title": "Head of ML Platform", "functional_area": "Data & Analytics", "role_type": "champion", "platform_relevance_score": 0.8},
     # RetailNow
     {"company_domain": "retailnow.com", "name": "David Kim", "title": "CTO", "functional_area": "Engineering", "role_type": "decision_maker", "platform_relevance_score": 0.95},
     {"company_domain": "retailnow.com", "name": "Rachel Wong", "title": "VP Infrastructure", "functional_area": "IT Operations", "role_type": "influencer", "platform_relevance_score": 0.8},
+    {"company_domain": "retailnow.com", "name": "Aisha Johnson", "title": "Director of Data Engineering", "functional_area": "Data & Analytics", "role_type": "champion", "platform_relevance_score": 0.78},
 ]
 
 NEWS_ITEMS = [

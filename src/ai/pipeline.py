@@ -14,6 +14,8 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.ai import brief_generator, classifier, scorer
+from src.contacts.linker import link_contacts_to_news
+from src.contacts.resolver import resolve_contacts
 from src.models.company import Company
 from src.models.contact import Contact
 from src.models.news import NewsItem
@@ -139,13 +141,34 @@ async def run_ai_pipeline(session: AsyncSession) -> int:
                 if existing_result.scalar_one_or_none():
                     continue
 
-                # Resolve best contact (decision_maker > influencer, highest score)
-                contact_result = await session.execute(
-                    select(Contact)
-                    .where(Contact.company_id == company.id)
-                    .order_by(Contact.platform_relevance_score.desc())
+                # Resolve best contact via signal-aware linker
+                resolved_contacts = await resolve_contacts(
+                    company_name=company.name,
+                    domain=company.domain,
+                    platform_vendor=vendor,
+                    company_id=company.id,
+                    session=session,
                 )
-                contact = contact_result.scalars().first()
+                contact = None  # ResolvedContact used for brief/score params
+                contact_id: int | None = None
+                if resolved_contacts:
+                    matches = link_contacts_to_news(
+                        contacts=resolved_contacts,
+                        signal_type=classification.signal_type or "tech_initiative",
+                        news_headline=news_item.headline,
+                        platform_vendor=vendor,
+                        platform_products=platform_products,
+                    )
+                    if matches:
+                        contact = matches[0].contact
+                    if contact:
+                        id_result = await session.execute(
+                            select(Contact.id).where(
+                                Contact.company_id == company.id,
+                                Contact.name == contact.name,
+                            )
+                        )
+                        contact_id = id_result.scalar_one_or_none()
 
                 priorities: list[str] = _extract_priorities(company)
                 platform_adoption = _adoption_depth(company.sales_motion)
@@ -180,7 +203,7 @@ async def run_ai_pipeline(session: AsyncSession) -> int:
                 task = SellerTask(
                     seller_id=DEFAULT_SELLER_ID,
                     company_id=company.id,
-                    contact_id=contact.id if contact else None,
+                    contact_id=contact_id,
                     news_item_id=news_item.id,
                     platform_vendor=vendor,
                     sales_motion=company.sales_motion or "new",
