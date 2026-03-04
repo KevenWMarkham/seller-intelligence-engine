@@ -45,3 +45,18 @@ workload_map:
   ai_ml: [sagemaker, bedrock]
   security: [security_hub]
   infrastructure: [s3, cloudfront]
+
+signal_keywords:
+  - "amazon web services"
+  - "aws"
+  - "amazon ec2"
+  - "amazon s3"
+  - "amazon eks"
+  - "aws lambda"
+  - "amazon sagemaker"
+  - "amazon bedrock"
+  - "amazon redshift"
+  - "aws re:invent"
+  - "graviton"
+  - "fargate"
+  - "dynamodb"

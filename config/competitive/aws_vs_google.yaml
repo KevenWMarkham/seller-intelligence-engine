@@ -1,0 +1,40 @@
+seller_vendor: aws
+competitor_vendor: google
+
+displacement_signals:
+  - "Google Cloud cost overruns"
+  - "BigQuery query cost surprises"
+  - "Vertex AI model availability issues"
+  - "GCP support tier complaints"
+  - "Google Workspace to M365 migration"
+  - "Anthos complexity"
+
+win_themes:
+  - theme: "Broadest service catalog"
+    detail: "AWS offers 200+ services vs GCP's narrower portfolio — less risk of capability gaps"
+  - theme: "Graviton price-performance"
+    detail: "AWS Graviton3 delivers 40% better price-performance than comparable GCP N2 instances"
+  - theme: "Global infrastructure"
+    detail: "33 AWS regions vs 40 GCP regions, but AWS has deeper multi-AZ redundancy per region"
+  - theme: "Bedrock model diversity"
+    detail: "Amazon Bedrock provides access to Anthropic, Meta, Cohere, Stability AI vs GCP's Vertex AI"
+
+competitive_battlecard:
+  our_strengths_vs_them:
+    - "EC2 Graviton vs GCP N2 — 40% better price-performance on compute"
+    - "Amazon Bedrock model choice vs Vertex AI Model Garden's Google-first bias"
+    - "AWS data transfer pricing improvements vs GCP egress surprises"
+    - "EKS managed control plane vs GKE Autopilot — more control for large teams"
+  their_likely_objections:
+    - objection: "Google has the best AI/ML with Vertex AI"
+      response: "Amazon Bedrock gives you access to more model families — Anthropic Claude, Meta Llama, Cohere — with the same enterprise SLAs. And SageMaker has 10+ years of enterprise ML production deployments."
+    - objection: "BigQuery is simpler and cheaper for analytics"
+      response: "Redshift Serverless gives you the same on-demand simplicity. And for complex pipelines, the AWS ecosystem — Glue, Athena, QuickSight — provides more flexibility than BigQuery alone."
+    - objection: "GCP has open ecosystem with Kubernetes"
+      response: "AWS invented EKS and contributes more to CNCF projects than any other cloud. Open ecosystem is a shared value — AWS has just built more production-grade managed services around it."
+
+tracked_signals:
+  - gcp_outages
+  - bigquery_pricing_changes
+  - vertex_ai_model_updates
+  - google_layoffs_announcements

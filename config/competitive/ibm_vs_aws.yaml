@@ -1,0 +1,40 @@
+seller_vendor: ibm
+competitor_vendor: aws
+
+displacement_signals:
+  - "AWS AI governance concerns"
+  - "SageMaker explainability limitations"
+  - "AWS hybrid on-premise gap"
+  - "Amazon data residency compliance issues"
+  - "AWS skills shortage in regulated industries"
+  - "Redshift mainframe integration complexity"
+
+win_themes:
+  - theme: "AI trust and governance"
+    detail: "watsonx.governance is purpose-built for AI regulation compliance — AWS has no equivalent"
+  - theme: "Hybrid infrastructure mastery"
+    detail: "IBM runs on-premises, edge, and cloud seamlessly — AWS Outposts requires full AWS dependency"
+  - theme: "Regulated industry depth"
+    detail: "IBM's 100+ years in FSI, healthcare, and government means pre-built compliance accelerators"
+  - theme: "Open source leadership"
+    detail: "Red Hat OpenShift runs anywhere — IBM's open-source commitment avoids cloud lock-in"
+
+competitive_battlecard:
+  our_strengths_vs_them:
+    - "watsonx.governance for AI regulation vs AWS responsible AI guidelines only"
+    - "Red Hat OpenShift portability vs EKS tied to AWS infrastructure"
+    - "IBM Z mainframe + cloud integration vs AWS Outposts mainframe gap"
+    - "IBM industry models trained on domain data vs Amazon Bedrock generic foundation models"
+  their_likely_objections:
+    - objection: "AWS has more AI services and is faster moving"
+      response: "Speed matters less than safety in regulated environments. watsonx.governance is the only enterprise AI platform purpose-built for EU AI Act and FDA compliance. How is your team managing AI risk today?"
+    - objection: "We're already on AWS and migration is too expensive"
+      response: "IBM and AWS coexist in 60% of Fortune 500 environments. Red Hat OpenShift runs on AWS today — we're not asking you to migrate, we're asking you to add governance and portability to what you have."
+    - objection: "AWS has better pricing"
+      response: "IBM's value is in risk reduction. One compliance failure or AI governance incident can cost more than 10 years of IBM licensing. Let's talk about your regulatory exposure first."
+
+tracked_signals:
+  - aws_ai_governance_gaps
+  - eu_ai_act_enforcement_news
+  - sagemaker_bias_incidents
+  - aws_outposts_limitations

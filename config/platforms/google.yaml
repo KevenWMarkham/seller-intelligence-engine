@@ -51,3 +51,20 @@ workload_map:
   collaboration: [workspace]
   integration: [apigee]
   app_modernization: [anthos]
+
+signal_keywords:
+  - "google cloud"
+  - "gcp"
+  - "vertex ai"
+  - "bigquery"
+  - "google workspace"
+  - "gemini"
+  - "looker"
+  - "anthos"
+  - "apigee"
+  - "chronicle"
+  - "cloud spanner"
+  - "google kubernetes engine"
+  - "gke"
+  - "deepmind"
+  - "tensorflow"

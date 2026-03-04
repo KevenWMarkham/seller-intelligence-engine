@@ -48,3 +48,19 @@ workload_map:
   cx: [dynamics365]
   automation: [power_platform]
   app_modernization: [azure_arc]
+
+signal_keywords:
+  - "microsoft azure"
+  - "azure"
+  - "microsoft 365"
+  - "m365"
+  - "copilot"
+  - "azure openai"
+  - "microsoft fabric"
+  - "dynamics 365"
+  - "power platform"
+  - "microsoft defender"
+  - "azure arc"
+  - "teams"
+  - "sharepoint"
+  - "sentinel"

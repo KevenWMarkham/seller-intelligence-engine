@@ -36,3 +36,16 @@ workload_map:
   data_analytics: [autonomous_db]
   cx: [fusion_cloud, netsuite, hcm_cloud, erp_cloud]
   automation: [apex]
+
+signal_keywords:
+  - "oracle cloud"
+  - "oci"
+  - "oracle autonomous database"
+  - "oracle fusion"
+  - "netsuite"
+  - "oracle erp"
+  - "oracle hcm"
+  - "oracle apex"
+  - "oracle database"
+  - "java"
+  - "mysql"

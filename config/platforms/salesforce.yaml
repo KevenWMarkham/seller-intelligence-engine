@@ -41,3 +41,17 @@ workload_map:
   data_analytics: [tableau, data_cloud]
   ai_ml: [einstein_ai]
   collaboration: [slack]
+
+signal_keywords:
+  - "salesforce"
+  - "einstein"
+  - "mulesoft"
+  - "tableau"
+  - "slack"
+  - "sales cloud"
+  - "service cloud"
+  - "marketing cloud"
+  - "salesforce data cloud"
+  - "dreamforce"
+  - "trailhead"
+  - "heroku"

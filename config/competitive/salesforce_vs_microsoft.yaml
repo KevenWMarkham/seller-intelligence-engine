@@ -1,0 +1,40 @@
+seller_vendor: salesforce
+competitor_vendor: microsoft
+
+displacement_signals:
+  - "Dynamics 365 implementation failures"
+  - "Microsoft CRM customization costs"
+  - "Dynamics partner ecosystem complaints"
+  - "Power BI vs Tableau debate"
+  - "Teams integration gaps with Salesforce"
+  - "Microsoft Copilot CRM ROI questions"
+
+win_themes:
+  - theme: "Purpose-built CRM"
+    detail: "Salesforce was built for CRM from day one — Dynamics 365 is ERP-first with CRM bolted on"
+  - theme: "AppExchange ecosystem"
+    detail: "5000+ purpose-built ISV apps on AppExchange vs. limited Dynamics ISV depth"
+  - theme: "Einstein AI advantage"
+    detail: "Einstein AI trained on 260 billion+ CRM transactions vs generic Copilot applied to CRM"
+  - theme: "Time to value"
+    detail: "Salesforce implementations average 6 months vs Dynamics 365 12-18 months for comparable scope"
+
+competitive_battlecard:
+  our_strengths_vs_them:
+    - "Sales Cloud forecasting accuracy vs Dynamics 365 Sales basic pipeline"
+    - "Service Cloud deflection rates vs Dynamics Customer Service"
+    - "Marketing Cloud journey builder vs Dynamics Customer Insights"
+    - "Einstein Conversation Insights vs Copilot for Sales"
+  their_likely_objections:
+    - objection: "We already pay for Microsoft and Dynamics comes included"
+      response: "Dynamics licensing appears cheaper but total cost of ownership including implementation, customization, and partner fees typically exceeds Salesforce at scale. Let's model your 3-year TCO."
+    - objection: "Microsoft integrates better with our existing stack"
+      response: "Salesforce integrates natively with Microsoft 365 including Outlook, Teams, and SharePoint. MuleSoft connects to any system. You get Salesforce's CRM depth without losing your Microsoft productivity suite."
+    - objection: "Copilot AI is newer and more advanced"
+      response: "Einstein AI is trained specifically on CRM data — 260 billion transaction signals. Generic Copilot applied to CRM doesn't have the domain-specific training that drives win rates and forecast accuracy."
+
+tracked_signals:
+  - dynamics_implementation_failures
+  - microsoft_copilot_sales_announcements
+  - power_platform_pricing_changes
+  - teams_crm_integration_updates

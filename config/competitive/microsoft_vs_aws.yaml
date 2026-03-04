@@ -1,0 +1,40 @@
+seller_vendor: microsoft
+competitor_vendor: aws
+
+displacement_signals:
+  - "heavy AWS spend seeking cost reduction"
+  - "AWS egress fee complaints"
+  - "SageMaker complexity frustrations"
+  - "AWS skills shortage on team"
+  - "Redshift scaling issues"
+  - "AWS re:Invent ROI concerns"
+
+win_themes:
+  - theme: "Copilot everywhere"
+    detail: "M365 Copilot + Azure OpenAI as unified AI strategy vs. AWS patchwork of Bedrock + SageMaker + Q"
+  - theme: "Hybrid cloud leadership"
+    detail: "Azure Arc + Azure Stack extending management consistently on-premises and in cloud"
+  - theme: "Microsoft ecosystem leverage"
+    detail: "Azure integrates natively with M365, Dynamics, and Teams — reducing integration costs"
+  - theme: "Enterprise agreements"
+    detail: "MACC commitments and Azure Hybrid Benefit provide significant TCO advantage for Windows/SQL shops"
+
+competitive_battlecard:
+  our_strengths_vs_them:
+    - "Azure OpenAI with enterprise SLAs vs Bedrock capacity uncertainty"
+    - "Microsoft Fabric unified analytics vs Redshift + Glue + QuickSight sprawl"
+    - "Azure Arc hybrid management vs AWS Outposts limited compatibility"
+    - "MACC credits reduce Azure costs vs AWS DRAW complexity"
+  their_likely_objections:
+    - objection: "We've standardized on AWS"
+      response: "Microsoft Azure is the most common second cloud in AWS shops. You don't need to migrate — let's identify net-new workloads where M365 Copilot or Azure OpenAI add immediate value."
+    - objection: "AWS has the deepest service catalog"
+      response: "Breadth vs. integration matters. Microsoft's advantage is that Azure, M365, Teams, and Dynamics work as one platform — reducing the integration tax you pay with AWS."
+    - objection: "Our team knows AWS"
+      response: "Azure skills are in high demand and Microsoft training paths are industry-leading. We can build in training and certification support as part of the engagement."
+
+tracked_signals:
+  - aws_cost_management_alerts
+  - redshift_incidents
+  - sagemaker_model_limits
+  - aws_egress_pricing_changes
