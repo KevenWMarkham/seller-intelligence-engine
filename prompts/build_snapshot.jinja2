@@ -1,0 +1,26 @@
+You are building a company intelligence snapshot for a {{ platform_vendor }} seller.
+
+COMPANY: {{ company_name }}
+DOMAIN: {{ domain }}
+{% if ticker %}TICKER: {{ ticker }}{% endif %}
+INDUSTRY: {{ industry or "Unknown" }}
+RAW DATA SOURCES:
+{{ raw_data | tojson(indent=2) }}
+
+Generate a comprehensive company snapshot. Return a JSON object with this structure:
+{
+  "description": "<3 clear paragraphs: (1) what the company does and their business model, (2) their market position and key customers, (3) their current strategic direction and challenges>",
+  "stage": "<Public | Series A/B/C/D | Late Stage Private | PE-backed | Unknown>",
+  "business_model": "<B2B SaaS | B2C | Marketplace | Services | Manufacturing | Financial Services | etc.>",
+  "revenue": "<approximate annual revenue range, e.g. '$500M-$1B' or 'Unknown'>",
+  "headcount": <approximate headcount integer or null>,
+  "hq_location": "<City, Country>",
+  "key_strategic_priorities": [
+    "<priority 1 — inferred from available data>",
+    "<priority 2>",
+    "<priority 3>"
+  ],
+  "growth_signals": ["<positive signal 1>", "<positive signal 2>"],
+  "risk_signals": ["<risk 1>", "<risk 2>"],
+  "platform_opportunity_summary": "<1-2 sentences on the biggest {{ platform_vendor }} opportunity at this company>"
+}

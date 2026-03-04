@@ -1,0 +1,40 @@
+seller_vendor: google
+competitor_vendor: microsoft
+
+displacement_signals:
+  - "Azure cost overruns"
+  - "M365 Copilot rollout frustration"
+  - "Azure OpenAI capacity constraints"
+  - "Power BI replaced by Looker interest"
+  - "Teams performance complaints"
+  - "Azure complexity and sprawl"
+
+win_themes:
+  - theme: "Best-of-breed AI"
+    detail: "Vertex AI + Gemini vs Azure OpenAI dependency on one model family"
+  - theme: "Data platform clarity"
+    detail: "BigQuery unified analytics vs Fabric complexity (Synapse + Power BI + OneLake)"
+  - theme: "Open AI ecosystem"
+    detail: "Model Garden with open-source models vs Microsoft's OpenAI exclusivity"
+  - theme: "Security-native"
+    detail: "Chronicle born-in-cloud SIEM vs Sentinel bolted onto legacy SIEM infrastructure"
+
+competitive_battlecard:
+  our_strengths_vs_them:
+    - "BigQuery vs Fabric — simpler, faster time to insight"
+    - "Vertex AI model choice vs Azure OpenAI single vendor lock-in"
+    - "Workspace cost vs M365 Copilot add-on pricing ($30/user/month)"
+    - "GKE Autopilot vs AKS management complexity"
+  their_likely_objections:
+    - objection: "We use M365 everywhere, Azure is the natural extension"
+      response: "Workspace is winning back enterprise share because Copilot delivers real productivity gains. And Google Cloud doesn't require you to replace Azure — we often land on net-new AI workloads first."
+    - objection: "Microsoft gives us better enterprise discounts"
+      response: "Let's put the total cost on paper including Azure egress, Copilot per-seat, and Fabric licensing. Google Cloud's pricing is often 30-40% lower on comparable workloads."
+    - objection: "Azure OpenAI is our AI strategy"
+      response: "Depending on one model family is a strategic risk. Vertex AI Model Garden gives you access to Gemini, Llama, Mistral, and custom models on the same platform."
+
+tracked_signals:
+  - azure_outages
+  - m365_copilot_adoption_rates
+  - fabric_migration_issues
+  - azure_openai_waitlist

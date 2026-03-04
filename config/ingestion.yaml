@@ -1,0 +1,40 @@
+news:
+  poll_interval_minutes: 15
+  sources:
+    rss:
+      - url: "https://techcrunch.com/feed/"
+        category: tech_news
+      - url: "https://feeds.reuters.com/reuters/businessNews"
+        category: business
+      - url: "https://feeds.feedburner.com/venturebeat/SZYF"
+        category: tech_news
+      - url: "https://www.prnewswire.com/rss/news-releases-list.rss"
+        category: press_release
+    newsapi:
+      enabled: true
+      keywords:
+        - cloud migration
+        - digital transformation
+        - AI adoption
+        - data platform
+        - security breach
+        - leadership change
+        - quarterly earnings
+    sec_edgar:
+      enabled: true
+      tracked_tickers: []   # Populated from CRM accounts
+
+social:
+  linkedin:
+    enabled: false          # Requires API key
+    poll_interval_minutes: 60
+    tracked_companies: []   # Populated from CRM accounts
+  twitter:
+    enabled: false          # Requires bearer token
+    poll_interval_minutes: 30
+    tracked_keywords: []
+
+crm:
+  provider: salesforce      # salesforce | hubspot
+  sync_interval_minutes: 30
+  enabled: false            # Requires credentials

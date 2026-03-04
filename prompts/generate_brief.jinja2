@@ -1,0 +1,43 @@
+You are an expert B2B sales brief writer for a {{ platform_vendor }} seller. Generate a conversation-ready brief for the following situation.
+
+COMPANY: {{ company_name }}
+CONTACT: {{ contact_name }}, {{ contact_title }} ({{ functional_area }})
+NEWS TRIGGER: {{ news_headline }}
+NEWS SUMMARY: {{ news_summary }}
+SALES MOTION: {{ sales_motion }}
+PLATFORM VENDOR: {{ platform_vendor }}
+
+COMPANY PRIORITIES:
+{% for priority in company_priorities %}- {{ priority }}
+{% endfor %}
+
+RELEVANT PLATFORM PRODUCTS:
+{% for product in platform_products %}- {{ product }}
+{% endfor %}
+
+{% if sales_motion == "wedge" %}
+MOTION GUIDANCE: This is a WEDGE motion. The company has minimal {{ platform_vendor }} adoption. Focus on a narrow, low-commitment POC entry point. The ask should be small and specific.
+{% elif sales_motion == "new" %}
+MOTION GUIDANCE: This is a NEW LOGO motion. Greenfield opportunity. Lead with industry relevance and peer references. The ask should involve multi-threading — meeting more people.
+{% elif sales_motion == "expand" %}
+MOTION GUIDANCE: This is an EXPAND motion. They already use {{ platform_vendor }} in 1-2 areas. Reference existing success and propose adjacent workload expansion.
+{% elif sales_motion == "displace" %}
+MOTION GUIDANCE: This is a DISPLACE motion. They use a competitor platform. Build a TCO and risk case. The ask should involve an exec sponsor and a POC.
+{% endif %}
+
+Return a JSON object with this exact structure:
+{
+  "opener": "<2-3 sentences referencing the news to open the conversation naturally>",
+  "why_it_matters": "<1 paragraph explaining why this news matters to this contact's specific role and functional area>",
+  "solution_connection": "<1-2 paragraphs connecting {{ platform_vendor }} capabilities to their likely pain or opportunity>",
+  "isv_recommendation": "<1 paragraph recommending a specific ISV solution type that fits this situation>",
+  "suggested_ask": "<1 specific, reasonable next step with a timeframe>",
+  "predicted_objections": [
+    {
+      "objection": "<likely pushback from this contact>",
+      "suggested_response": "<2-3 sentence response that is empathetic and commercially sharp>"
+    }
+  ]
+}
+
+Generate 3-5 predicted objections. Make the opener sound natural, not like marketing copy.

@@ -1,0 +1,47 @@
+vendor: aws
+display_name: AWS
+
+products:
+  - id: ec2
+    name: Amazon EC2
+    workload: compute
+    value_prop: "Broadest choice of instances with Graviton processors delivering 40% better price-performance"
+  - id: eks
+    name: Amazon EKS
+    workload: compute
+    value_prop: "Managed Kubernetes with Fargate serverless option and deep AWS service integration"
+  - id: sagemaker
+    name: Amazon SageMaker
+    workload: ai_ml
+    value_prop: "End-to-end ML platform with Studio, pipelines, and real-time inference"
+  - id: bedrock
+    name: Amazon Bedrock
+    workload: ai_ml
+    value_prop: "Fully managed foundation models from leading AI companies via single API"
+  - id: redshift
+    name: Amazon Redshift
+    workload: data_analytics
+    value_prop: "Cloud data warehouse with serverless option and native ML integration"
+  - id: s3
+    name: Amazon S3
+    workload: infrastructure
+    value_prop: "Industry-standard object storage with 99.999999999% durability"
+  - id: lambda
+    name: AWS Lambda
+    workload: compute
+    value_prop: "Serverless compute with millisecond startup and pay-per-invocation pricing"
+  - id: security_hub
+    name: AWS Security Hub
+    workload: security
+    value_prop: "Centralized security posture management with automated compliance checks"
+  - id: cloudfront
+    name: Amazon CloudFront
+    workload: infrastructure
+    value_prop: "Global CDN with 450+ PoPs and integrated DDoS protection"
+
+workload_map:
+  compute: [ec2, eks, lambda]
+  data_analytics: [redshift]
+  ai_ml: [sagemaker, bedrock]
+  security: [security_hub]
+  infrastructure: [s3, cloudfront]

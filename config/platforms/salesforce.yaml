@@ -1,0 +1,43 @@
+vendor: salesforce
+display_name: Salesforce
+
+products:
+  - id: sales_cloud
+    name: Sales Cloud
+    workload: cx
+    value_prop: "AI-powered CRM with Einstein Copilot to close more deals faster"
+  - id: service_cloud
+    name: Service Cloud
+    workload: cx
+    value_prop: "Omni-channel customer service with AI case deflection and agent assist"
+  - id: marketing_cloud
+    name: Marketing Cloud
+    workload: cx
+    value_prop: "Unified marketing platform with journey orchestration and personalization"
+  - id: mulesoft
+    name: MuleSoft Anypoint
+    workload: integration
+    value_prop: "API-led integration platform connecting any system, data, or device"
+  - id: tableau
+    name: Tableau
+    workload: data_analytics
+    value_prop: "Visual analytics platform with Einstein AI and Salesforce Data Cloud integration"
+  - id: einstein_ai
+    name: Einstein AI
+    workload: ai_ml
+    value_prop: "Native AI embedded across all Salesforce clouds with trust layer"
+  - id: slack
+    name: Slack
+    workload: collaboration
+    value_prop: "Digital HQ with Salesforce integration and Einstein AI workflows"
+  - id: data_cloud
+    name: Salesforce Data Cloud
+    workload: data_analytics
+    value_prop: "Real-time customer data platform unifying all enterprise data in Salesforce"
+
+workload_map:
+  cx: [sales_cloud, service_cloud, marketing_cloud]
+  integration: [mulesoft]
+  data_analytics: [tableau, data_cloud]
+  ai_ml: [einstein_ai]
+  collaboration: [slack]

@@ -1,0 +1,50 @@
+vendor: microsoft
+display_name: Microsoft
+
+products:
+  - id: azure_compute
+    name: Azure Virtual Machines
+    workload: compute
+    value_prop: "Broad VM portfolio with hybrid benefit for Windows Server and SQL Server licensing"
+  - id: aks
+    name: Azure Kubernetes Service
+    workload: compute
+    value_prop: "Managed Kubernetes integrated with Azure AD, Monitor, and DevOps"
+  - id: azure_openai
+    name: Azure OpenAI Service
+    workload: ai_ml
+    value_prop: "Enterprise access to OpenAI models with data privacy, compliance, and SLAs"
+  - id: fabric
+    name: Microsoft Fabric
+    workload: data_analytics
+    value_prop: "Unified analytics platform combining OneLake, Power BI, and Synapse"
+  - id: m365
+    name: Microsoft 365
+    workload: collaboration
+    value_prop: "Productivity suite with Copilot AI integration across Word, Excel, Teams"
+  - id: dynamics365
+    name: Dynamics 365
+    workload: cx
+    value_prop: "Integrated CRM and ERP with Copilot AI and Power Platform extensibility"
+  - id: power_platform
+    name: Power Platform
+    workload: automation
+    value_prop: "Low-code platform for automating processes and building apps with Copilot"
+  - id: defender
+    name: Microsoft Defender
+    workload: security
+    value_prop: "Unified XDR and SIEM platform with AI-driven threat intelligence"
+  - id: azure_arc
+    name: Azure Arc
+    workload: app_modernization
+    value_prop: "Extend Azure management and services to any infrastructure"
+
+workload_map:
+  compute: [azure_compute, aks]
+  data_analytics: [fabric]
+  ai_ml: [azure_openai]
+  security: [defender]
+  collaboration: [m365]
+  cx: [dynamics365]
+  automation: [power_platform]
+  app_modernization: [azure_arc]

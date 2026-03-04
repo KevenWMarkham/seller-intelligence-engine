@@ -1,0 +1,62 @@
+You are preparing a seller for an important call. Generate a complete pre-call preparation package.
+
+CONTACT: {{ contact_name }}, {{ contact_title }} at {{ company_name }}
+RECENT ACTIVITY: {{ contact_recent_activity }}
+NEWS TRIGGER: {{ news_trigger }}
+SALES MOTION: {{ sales_motion }}
+PLATFORM VENDOR: {{ platform_vendor }}
+
+PLATFORM PRODUCTS RELEVANT TO THIS CALL:
+{% for product in platform_products %}- {{ product }}
+{% endfor %}
+
+COMPANY PRIORITIES:
+{% for priority in company_priorities %}- {{ priority }}
+{% endfor %}
+
+ISV RECOMMENDATIONS:
+{% for isv in isv_recommendations %}- {{ isv.isv_name }}: {{ isv.conversation_hook }}
+{% endfor %}
+
+Generate a complete prep package as a JSON object:
+{
+  "contact_dossier": "<2 paragraphs: (1) role, likely priorities, and what success looks like for them personally; (2) communication style based on title/tenure and how to build rapport>",
+  "company_situation": "<2 paragraphs: (1) current state — financial health, tech stack, competitive position; (2) the news trigger and why it creates urgency now>",
+  "isv_brief": "<1 paragraph summarizing the top 1-2 ISV recommendations and how to introduce them naturally in conversation>",
+  "call_roadmap": [
+    {
+      "phase": "open",
+      "objective": "<objective for this phase>",
+      "key_questions": ["<question 1>", "<question 2>"],
+      "time_allocation": "3 min"
+    },
+    {
+      "phase": "discover",
+      "objective": "<objective>",
+      "key_questions": ["<question 1>", "<question 2>", "<question 3>"],
+      "time_allocation": "10 min"
+    },
+    {
+      "phase": "value",
+      "objective": "<objective>",
+      "key_questions": ["<question 1>", "<question 2>"],
+      "time_allocation": "10 min"
+    },
+    {
+      "phase": "ask",
+      "objective": "<objective>",
+      "key_questions": ["<question 1>"],
+      "time_allocation": "5 min"
+    }
+  ],
+  "objection_predictions": [
+    {"objection": "<likely objection>", "suggested_response": "<2-sentence response>"},
+    {"objection": "<likely objection>", "suggested_response": "<2-sentence response>"},
+    {"objection": "<likely objection>", "suggested_response": "<2-sentence response>"}
+  ],
+  "success_metrics": [
+    "<what 'good' looks like for this call — specific outcome 1>",
+    "<specific outcome 2>",
+    "<specific outcome 3>"
+  ]
+}

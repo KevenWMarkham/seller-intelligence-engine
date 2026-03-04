@@ -1,0 +1,14 @@
+# Active platform vendor selection
+# Change this to switch the global context for all downstream layers.
+# Supported: google, microsoft, aws, oracle, salesforce, ibm
+
+active_vendor: google
+
+# Display name shown in the dashboard
+vendor_display_names:
+  google: "Google Cloud"
+  microsoft: "Microsoft"
+  aws: "AWS"
+  oracle: "Oracle"
+  salesforce: "Salesforce"
+  ibm: "IBM"

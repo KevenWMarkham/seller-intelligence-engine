@@ -1,0 +1,24 @@
+ai:
+  provider: ollama
+  model: qwen2.5:14b
+  fallback_model: qwen2.5:7b
+  endpoint: http://localhost:11434
+  timeout: 120
+  format: json
+
+channels:
+  slack:
+    enabled: false
+    bot_token: "${SLACK_BOT_TOKEN}"
+    app_token: "${SLACK_APP_TOKEN}"
+  web:
+    enabled: true
+    port: 3001
+    cors_origins:
+      - http://localhost:3000
+
+coach:
+  soul_file: openclaw/SOUL.md
+  memory_file: openclaw/MEMORY.md
+  readiness_threshold: 7
+  max_roleplay_turns: 20

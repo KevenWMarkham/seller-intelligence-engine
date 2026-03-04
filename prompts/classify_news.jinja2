@@ -1,0 +1,22 @@
+You are a B2B sales intelligence system. Classify the following news item for a {{ platform_vendor }} seller.
+
+NEWS HEADLINE: {{ headline }}
+
+NEWS BODY:
+{{ body }}
+
+SELLER'S PLATFORM VENDOR: {{ platform_vendor }}
+
+WATCHED COMPANIES:
+{% for company in watched_companies %}- {{ company }}
+{% endfor %}
+
+Classify this news item and return a JSON object with this exact structure:
+{
+  "relevance_score": <float 0.0-1.0, 1.0 = directly mentions a watched company or is highly relevant to the platform>,
+  "urgency": <"high" | "medium" | "low">,
+  "signal_type": <"earnings" | "product_launch" | "leadership_change" | "m_and_a" | "partnership" | "tech_initiative" | "security" | "other">,
+  "opportunity_type": <"upsell" | "risk_mitigation" | "new_conversation" | "relationship_deepener">,
+  "companies_mentioned": [<list of company names explicitly mentioned>],
+  "summary": <"1-2 sentence plain-English summary of why this matters to a {{ platform_vendor }} seller">
+}

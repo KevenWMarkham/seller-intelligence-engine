@@ -1,0 +1,29 @@
+You are a B2B sales motion classifier for a {{ platform_vendor }} seller.
+
+COMPANY: {{ company_name }}
+SELLER'S PLATFORM VENDOR: {{ platform_vendor }}
+
+DETECTED TECH STACK:
+{% for tech in tech_stack %}- {{ tech }}
+{% endfor %}
+
+PLATFORM ADOPTION DETECTED:
+{% for vendor, adoption in platform_adoption.items() %}
+- {{ vendor }}: depth={{ adoption.depth }}, products={{ adoption.products_detected | join(", ") or "none" }}
+{% endfor %}
+
+Classify the sales motion for this account. Choose one:
+
+- "wedge": Company has no meaningful {{ platform_vendor }} adoption. Uses point solutions or a competitor ecosystem. Entry strategy: narrow POC in one functional area, low-commitment, build a champion.
+- "new": Genuinely greenfield. No major cloud/platform vendor relationship. Open to a full platform conversation. Multi-thread from the start.
+- "expand": Active {{ platform_vendor }} adoption in 1-2 areas. Adjacent workloads available. Leverage existing champions, show ROI, propose expansion.
+- "displace": Actively using a competitor platform (AWS, Azure, GCP, etc.). Signs of dissatisfaction or strategic shift. Requires exec sponsor, POC, and TCO comparison.
+
+Return a JSON object with this exact structure:
+{
+  "type": <"wedge" | "new" | "expand" | "displace">,
+  "confidence": <float 0.0-1.0>,
+  "reasoning": "<2-3 sentences explaining the classification based on the evidence above>",
+  "entry_points": ["<specific opportunity 1>", "<specific opportunity 2>"],
+  "competitor_to_displace": <"aws" | "azure" | "gcp" | "oracle" | "salesforce" | "ibm" | null>
+}

@@ -1,0 +1,19 @@
+# Priority score weights — must sum to 1.0
+# Configurable per sales team / region.
+
+weights:
+  company_priority_alignment: 0.25   # Company priorities vs platform capabilities
+  deal_value_potential: 0.20         # CRM opportunity value
+  contact_seniority: 0.15            # Decision maker vs influencer vs champion
+  sales_motion_opportunity: 0.15     # Motion type opportunity size
+  news_urgency: 0.15                 # Classifier urgency rating
+  platform_adoption_depth: 0.10     # Technographic depth of platform adoption
+
+# Notification thresholds
+thresholds:
+  slack_immediate: 80       # Priority >= 80 → instant Slack DM
+  email_digest: 50          # Priority 50-79 → morning digest
+  # Priority < 50 → dashboard only
+
+# Readiness gate (coaching)
+readiness_gate: 7           # Seller must score >= 7/10 before task moves to "ready"

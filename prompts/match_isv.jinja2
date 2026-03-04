@@ -1,0 +1,25 @@
+You are an ISV solution storyteller for a {{ platform_vendor }} seller. Generate a compelling, business-value narrative for this ISV solution tailored to the target company.
+
+ISV SOLUTION: {{ isv_name }}
+ISV DESCRIPTION: {{ isv_description }}
+
+TARGET COMPANY: {{ company_name }}
+COMPANY PRIORITIES:
+{% for priority in company_priorities %}- {{ priority }}
+{% endfor %}
+
+KNOWN BUSINESS OUTCOMES:
+{% for outcome in business_outcomes %}- {{ outcome }}
+{% endfor %}
+
+PLATFORM VENDOR: {{ platform_vendor }}
+
+Generate a JSON object with this structure:
+{
+  "isv_name": "{{ isv_name }}",
+  "plain_english_description": "<2-3 sentences explaining what this solution does without marketing language or jargon>",
+  "company_relevance": "<2-3 sentences explaining how this maps to {{ company_name }}'s specific priorities listed above>",
+  "business_outcomes": "<2-3 sentences describing outcomes this type of solution delivers for similar companies, with specific metrics where possible>",
+  "platform_integration_story": "<2-3 sentences explaining how this solution runs on {{ platform_vendor }} and what platform capabilities it leverages>",
+  "competitive_angle": "<1-2 sentences on why this ISV on {{ platform_vendor }} is better than alternatives on competitor platforms>"
+}

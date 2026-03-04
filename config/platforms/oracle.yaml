@@ -1,0 +1,38 @@
+vendor: oracle
+display_name: Oracle
+
+products:
+  - id: oci_compute
+    name: OCI Compute
+    workload: compute
+    value_prop: "Consistent pricing with no egress fees and dedicated hardware options"
+  - id: autonomous_db
+    name: Oracle Autonomous Database
+    workload: data_analytics
+    value_prop: "Self-driving database with automatic tuning, patching, and scaling"
+  - id: fusion_cloud
+    name: Oracle Fusion Cloud
+    workload: cx
+    value_prop: "Complete ERP, HCM, and CX suite with embedded AI and unified data model"
+  - id: netsuite
+    name: Oracle NetSuite
+    workload: cx
+    value_prop: "Leading cloud ERP for mid-market with financials, inventory, and e-commerce"
+  - id: apex
+    name: Oracle APEX
+    workload: automation
+    value_prop: "Low-code development platform built into Oracle Database"
+  - id: hcm_cloud
+    name: Oracle HCM Cloud
+    workload: cx
+    value_prop: "Complete HR platform with talent management, payroll, and workforce analytics"
+  - id: erp_cloud
+    name: Oracle ERP Cloud
+    workload: cx
+    value_prop: "Integrated financial management with AI-powered automation"
+
+workload_map:
+  compute: [oci_compute]
+  data_analytics: [autonomous_db]
+  cx: [fusion_cloud, netsuite, hcm_cloud, erp_cloud]
+  automation: [apex]

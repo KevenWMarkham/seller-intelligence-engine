@@ -1,0 +1,40 @@
+seller_vendor: google
+competitor_vendor: aws
+
+displacement_signals:
+  - "heavy AWS spend with no GCP footprint"
+  - "AWS cost escalation complaints"
+  - "egress fee frustration"
+  - "SageMaker limitations for custom models"
+  - "Redshift performance issues at scale"
+  - "AWS re:Invent budget fatigue"
+
+win_themes:
+  - theme: "Data & AI superiority"
+    detail: "BigQuery + Vertex AI as unified platform vs stitching together Redshift + SageMaker"
+  - theme: "Open ecosystem"
+    detail: "Anthos and open standards vs AWS proprietary lock-in"
+  - theme: "Predictable pricing"
+    detail: "BigQuery on-demand pricing vs Redshift cluster commitments"
+  - theme: "Workspace + GCP synergy"
+    detail: "Integrated productivity and cloud in one vendor relationship"
+
+competitive_battlecard:
+  our_strengths_vs_them:
+    - "BigQuery serverless vs Redshift cluster management overhead"
+    - "Vertex AI Model Garden vs Bedrock limited model selection"
+    - "GKE Autopilot vs EKS manual node management"
+    - "Chronicle flat-rate pricing vs AWS Security Hub per-finding costs"
+  their_likely_objections:
+    - objection: "We're all-in on AWS"
+      response: "Multi-cloud is the reality for 87% of enterprises. We're seeing GCP land in the data/AI layer even in AWS shops. Let's talk about where BigQuery could sit alongside your existing AWS investment."
+    - objection: "AWS has more services"
+      response: "More services doesn't mean better outcomes. Google leads on the workloads that matter most: AI/ML, analytics, and Kubernetes. What's the specific workload you're trying to solve?"
+    - objection: "Migration risk is too high"
+      response: "We're not asking you to migrate everything. Let's start with a net-new AI or analytics project where GCP can demonstrate value with zero migration risk."
+
+tracked_signals:
+  - aws_cost_management
+  - sagemaker_deprecations
+  - redshift_incidents
+  - aws_egress_complaints

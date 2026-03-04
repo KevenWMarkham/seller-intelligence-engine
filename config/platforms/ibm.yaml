@@ -1,0 +1,44 @@
+vendor: ibm
+display_name: IBM
+
+products:
+  - id: watsonx_ai
+    name: watsonx.ai
+    workload: ai_ml
+    value_prop: "Enterprise AI studio with open-source foundation models and governance"
+  - id: watsonx_data
+    name: watsonx.data
+    workload: data_analytics
+    value_prop: "Open, hybrid lakehouse with fit-for-purpose query engines"
+  - id: watsonx_governance
+    name: watsonx.governance
+    workload: ai_ml
+    value_prop: "AI governance platform for trustworthy, explainable AI at scale"
+  - id: red_hat_openshift
+    name: Red Hat OpenShift
+    workload: app_modernization
+    value_prop: "Enterprise Kubernetes platform for hybrid cloud application modernization"
+  - id: cloud_pak_data
+    name: Cloud Pak for Data
+    workload: data_analytics
+    value_prop: "Integrated data and AI platform with cataloging, governance, and analytics"
+  - id: qradar
+    name: IBM QRadar
+    workload: security
+    value_prop: "AI-powered SIEM with SOAR integration and threat intelligence"
+  - id: maximo
+    name: IBM Maximo
+    workload: automation
+    value_prop: "Enterprise asset management with AI-powered predictive maintenance"
+  - id: sterling
+    name: IBM Sterling
+    workload: integration
+    value_prop: "Supply chain and B2B integration with real-time visibility"
+
+workload_map:
+  ai_ml: [watsonx_ai, watsonx_governance]
+  data_analytics: [watsonx_data, cloud_pak_data]
+  app_modernization: [red_hat_openshift]
+  security: [qradar]
+  automation: [maximo]
+  integration: [sterling]

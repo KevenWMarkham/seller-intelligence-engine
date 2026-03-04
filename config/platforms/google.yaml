@@ -1,0 +1,53 @@
+vendor: google
+display_name: Google Cloud
+
+products:
+  - id: gcp_compute
+    name: Google Compute Engine
+    workload: compute
+    value_prop: "High-performance, scalable VMs with per-second billing and preemptible options"
+  - id: gke
+    name: Google Kubernetes Engine
+    workload: compute
+    value_prop: "Managed Kubernetes with Autopilot mode, reducing ops overhead by 70%"
+  - id: bigquery
+    name: BigQuery
+    workload: data_analytics
+    value_prop: "Serverless data warehouse with built-in ML, processing petabytes in seconds"
+  - id: vertex_ai
+    name: Vertex AI
+    workload: ai_ml
+    value_prop: "End-to-end ML platform with AutoML, custom training, and Model Garden"
+  - id: workspace
+    name: Google Workspace
+    workload: collaboration
+    value_prop: "Integrated productivity suite with AI-powered features in Gmail, Docs, Meet"
+  - id: chronicle
+    name: Google Chronicle
+    workload: security
+    value_prop: "Cloud-native SIEM with petabyte-scale security analytics at flat pricing"
+  - id: looker
+    name: Looker
+    workload: data_analytics
+    value_prop: "Data platform with semantic layer, embedded analytics, and LookML modeling"
+  - id: anthos
+    name: Anthos
+    workload: app_modernization
+    value_prop: "Hybrid and multi-cloud application platform built on open standards"
+  - id: apigee
+    name: Apigee
+    workload: integration
+    value_prop: "Full lifecycle API management with analytics, security, and developer portal"
+  - id: cloud_spanner
+    name: Cloud Spanner
+    workload: data_analytics
+    value_prop: "Globally distributed relational database with 99.999% availability SLA"
+
+workload_map:
+  compute: [gcp_compute, gke]
+  data_analytics: [bigquery, looker, cloud_spanner]
+  ai_ml: [vertex_ai]
+  security: [chronicle]
+  collaboration: [workspace]
+  integration: [apigee]
+  app_modernization: [anthos]

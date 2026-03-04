@@ -1,0 +1,42 @@
+You are a sales priority scoring system. Score this seller task from 1-100 based on 6 weighted factors.
+
+TASK CONTEXT:
+- Company: {{ company_name }}
+- Contact: {{ contact_title }} ({{ contact_role_type }})
+- Sales Motion: {{ sales_motion }}
+- Platform Vendor: {{ platform_vendor if platform_vendor is defined else "unknown" }}
+- News Urgency: {{ news_urgency }}
+- Deal Value Estimate: {{ deal_value_estimate }}
+- Platform Adoption Depth: {{ platform_adoption_depth }}
+
+COMPANY PRIORITIES:
+{% for priority in company_priorities %}- {{ priority }}
+{% endfor %}
+
+SCORING WEIGHTS:
+{% for factor, weight in weights.items() %}- {{ factor }}: {{ (weight * 100)|int }}%
+{% endfor %}
+
+Score each factor 0.0-1.0, then compute the weighted sum × 100 to get the final score.
+
+Scoring guidance:
+- company_priority_alignment: How well does the news/opportunity align with the company's stated priorities?
+- deal_value_potential: Based on deal value estimate and company size, how large is this opportunity?
+- contact_seniority: decision_maker=1.0, influencer=0.7, champion=0.4
+- sales_motion_opportunity: displace=1.0 (hardest, biggest), expand=0.8, new=0.7, wedge=0.5
+- news_urgency: high=1.0, medium=0.6, low=0.3
+- platform_adoption_depth: deep=1.0, moderate=0.7, light=0.4, evaluating=0.2, none=0.0
+
+Return a JSON object with this exact structure:
+{
+  "score": <integer 1-100>,
+  "reasoning": "<2-3 sentences explaining the key factors driving this score>",
+  "factor_scores": {
+    "company_priority_alignment": <float 0.0-1.0>,
+    "deal_value_potential": <float 0.0-1.0>,
+    "contact_seniority": <float 0.0-1.0>,
+    "sales_motion_opportunity": <float 0.0-1.0>,
+    "news_urgency": <float 0.0-1.0>,
+    "platform_adoption_depth": <float 0.0-1.0>
+  }
+}

@@ -1,0 +1,46 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Database
+nexus.db
+*.sqlite
+*.sqlite3
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# ChromaDB
+chroma_db/
+
+# Ollama model cache (managed by ollama itself)
+# .ollama/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
